@@ -1,9 +1,8 @@
-import { useState } from "react";
-import HelloWorld from "../components/HelloWorld";
-import Footer from "../components/Footer";
+import React, { useState } from 'react';
+import Footer from '../components/Footer';
 
-const HomePage = () => {
-  const [displayName, setState] = useState("");
+function HomePage() {
+  const [displayName, setState] = useState('World');
   const handleOnchange = (e) => {
     setState(e.target.value);
   };
@@ -11,9 +10,8 @@ const HomePage = () => {
     <>
       <main>
         <section id="signup">
-          <div className="hero-background"></div>
-          <div class="signup-form">
-            <HelloWorld name={displayName} />
+          <div className="hero-background" />
+          <div className="signup-form">
             <form>
               <label htmlFor="firstName">
                 <span>Name: </span>
@@ -31,6 +29,6 @@ const HomePage = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default HomePage;

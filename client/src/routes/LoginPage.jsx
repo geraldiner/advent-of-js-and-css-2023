@@ -1,6 +1,7 @@
-import Footer from "../components/Footer";
+import React from 'react';
+import Footer from '../components/Footer';
 
-const LoginPage = () => {
+function LoginPage() {
   return (
     <>
       <main>
@@ -9,6 +10,6 @@ const LoginPage = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default LoginPage;

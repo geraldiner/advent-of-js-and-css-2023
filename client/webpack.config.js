@@ -1,14 +1,14 @@
-const path = require('path')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const HtmlWebpackPlugin = require('html-webpack-plugin')
-const { CleanWebpackPlugin } = require('clean-webpack-plugin')
+const path = require('path');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
-let mode = 'development'
-let target = 'web'
+let mode = 'development';
+let target = 'web';
 
 if (process.env.NODE_ENV === 'production') {
-  mode = 'production'
-  target = 'browserslist'
+  mode = 'production';
+  target = 'browserslist';
 }
 
 module.exports = {
@@ -64,4 +64,4 @@ module.exports = {
     static: './dist',
     hot: true,
   },
-}
+};

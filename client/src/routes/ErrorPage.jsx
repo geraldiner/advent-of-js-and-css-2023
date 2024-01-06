@@ -1,7 +1,8 @@
-import { useRouteError } from "react-router-dom";
-import Footer from "../components/Footer";
+import React from 'react';
+import { useRouteError } from 'react-router-dom';
+import Footer from '../components/Footer';
 
-const ErrorPage = () => {
+function ErrorPage() {
   const error = useRouteError();
   console.error(error);
 
@@ -17,6 +18,6 @@ const ErrorPage = () => {
       <Footer />
     </>
   );
-};
+}
 
 export default ErrorPage;

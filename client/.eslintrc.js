@@ -16,5 +16,7 @@ module.exports = {
   },
   plugins: ['react', 'prettier'],
   ignorePatterns: ['*.config.js'],
-  rules: {},
-}
+  rules: {
+    'no-console': 'off',
+  },
+};
