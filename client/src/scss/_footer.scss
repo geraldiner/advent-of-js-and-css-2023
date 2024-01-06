@@ -1,0 +1,14 @@
+@use "variables";
+
+footer {
+  background-color: variables.$acadia;
+  bottom: 0;
+  color: variables.$scotch-mist;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 200px;
+  padding: 20px;
+  position: fixed;
+  width: 100%;
+}
