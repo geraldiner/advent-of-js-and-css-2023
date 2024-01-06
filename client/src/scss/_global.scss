@@ -1,5 +1,5 @@
-@use "variables";
-@import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Bebas+Neue&family=Inter:wght@400;500;700&family=Kalam:wght@700&display=swap");
+@use 'variables';
+@import url('https://fonts.googleapis.com/css2?family=Agbalumo&family=Bebas+Neue&family=Inter:wght@400;500;700&family=Kalam:wght@700&display=swap');
 
 * {
   margin: 0;
@@ -9,5 +9,5 @@
 body {
   background: variables.$silver-tree;
   color: variables.$evergreen;
-  font-family: "Inter", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
 }

@@ -1,10 +1,10 @@
-import React from 'react'
-import { RouterProvider, createBrowserRouter } from 'react-router-dom'
-import SignupPage from './routes/SignupPage'
-import ErrorPage from './routes/ErrorPage'
-import LoginPage from './routes/LoginPage'
+import React from 'react';
+import { RouterProvider, createBrowserRouter } from 'react-router-dom';
+import SignupPage from './routes/SignupPage';
+import ErrorPage from './routes/ErrorPage';
+import LoginPage from './routes/LoginPage';
 
-import './scss/index.scss'
+import './scss/index.scss';
 
 const router = createBrowserRouter([
   {
@@ -21,10 +21,10 @@ const router = createBrowserRouter([
       },
     ],
   },
-])
+]);
 
 function App() {
-  return <RouterProvider router={router} />
+  return <RouterProvider router={router} />;
 }
 
-export default App
+export default App;
