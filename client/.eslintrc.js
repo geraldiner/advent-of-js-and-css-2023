@@ -6,6 +6,7 @@ module.exports = {
   extends: [
     'airbnb',
     'airbnb/hooks',
+    'plugin:import/recommended',
     'plugin:react/recommended',
     'plugin:prettier/recommended',
   ],
@@ -18,5 +19,21 @@ module.exports = {
   ignorePatterns: ['*.config.js'],
   rules: {
     'no-console': 'off',
+    eqeqeq: ['error', 'always'],
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+        'newlines-between': 'always',
+      },
+    ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreDeclarationSort: true,
+      },
+    ],
   },
 };

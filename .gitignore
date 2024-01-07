@@ -1,4 +1,5 @@
 .env
+settings.json
 challenge_resources
 **/node_modules
 **/dist

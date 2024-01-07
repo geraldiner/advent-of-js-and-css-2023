@@ -1,5 +1,6 @@
 import React from 'react';
 import { useRouteError } from 'react-router-dom';
+
 import Footer from '../components/Footer';
 
 function ErrorPage() {
