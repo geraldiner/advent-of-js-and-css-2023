@@ -1,8 +1,9 @@
 import React from 'react';
 import { RouterProvider, createBrowserRouter } from 'react-router-dom';
-import SignupPage from './routes/SignupPage';
+
 import ErrorPage from './routes/ErrorPage';
 import LoginPage from './routes/LoginPage';
+import SignupPage from './routes/SignupPage';
 
 import './scss/index.scss';
 
@@ -13,11 +14,11 @@ const router = createBrowserRouter([
     children: [
       {
         index: true,
-        element: <SignupPage />,
+        element: <LoginPage />,
       },
       {
-        path: 'login',
-        element: <LoginPage />,
+        path: 'signup',
+        element: <SignupPage />,
       },
     ],
   },

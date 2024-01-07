@@ -16,6 +16,7 @@ module.exports = {
   target,
   output: {
     path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
     assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
@@ -63,5 +64,6 @@ module.exports = {
   devServer: {
     static: './dist',
     hot: true,
+    historyApiFallback: true,
   },
 };
