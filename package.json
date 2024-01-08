@@ -9,8 +9,13 @@
     "start-client": "cd client && npm run start",
     "test": "run-p test-*",
     "test-server": "cd server && npm run test",
-    "test-client": "cd client && npm run test"
-
+    "test-client": "cd client && npm run test",
+    "check-all": "run-p check-*",
+    "check-lint-client": "cd client && npm run check-all",
+    "check-lint-server": "cd server && npm run lint",
+    "check-test-client": "cd client && npm run test",
+    "check-test-server": "cd server && npm run test",
+    "prepare": "husky install"
   },
   "repository": {
     "type": "git",
@@ -24,6 +29,8 @@
   },
   "homepage": "https://github.com/geraldiner/advent-of-js-and-css-2023#readme",
   "devDependencies": {
+    "husky": "^8.0.0",
+    "lint-staged": "^11.1.4",
     "npm-run-all": "^4.1.5"
   }
 }

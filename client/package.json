@@ -7,9 +7,14 @@
     "build": "set NODE_ENV=production && webpack",
     "build-dev": "webpack",
     "clean": "npx rimraf dist",
+    "lint": "eslint --ext .js,.jsx .",
     "lint-fix": "eslint --ext .js,.jsx . --fix",
+    "prettier": "prettier .",
     "prettier-fix": "prettier . --write",
+    "lint-scss": "stylelint **/**/*.scss",
     "lint-scss-fix": "stylelint **/**/*.scss --fix",
+    "check-all": "npm run lint && npm run prettier && npm run lint-scss",
+    "fix-all": "npm run lint-fix && npm run prettier-fix && npm run lint-scss-fix",
     "test": "cross-env NODE_ENV=test jest --testEnvironment=jsdom --detectOpenHandles --forceExit"
   },
   "eslintConfig": {
