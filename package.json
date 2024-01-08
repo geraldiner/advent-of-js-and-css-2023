@@ -6,7 +6,11 @@
   "scripts": {
     "start": "run-p start-*",
     "start-server": "cd server && npm run dev",
-    "start-client": "cd client && npm run start"
+    "start-client": "cd client && npm run start",
+    "test": "run-p test-*",
+    "test-server": "cd server && npm run test",
+    "test-client": "cd client && npm run test"
+
   },
   "repository": {
     "type": "git",

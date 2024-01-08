@@ -23,6 +23,7 @@ app.use(
 );
 
 app.get("/", (req, res) => {
+  res.status = 200;
   res.json({
     message: "Hello World!",
   });
@@ -32,6 +33,6 @@ app.use(middlewares.notFound);
 app.use(middlewares.errorHandler);
 
 const port = process.env.PORT || 4040;
-app.listen(port, () => {
+module.exports = app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);
 });
