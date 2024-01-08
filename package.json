@@ -10,7 +10,7 @@
     "test": "run-p test-*",
     "test-server": "cd server && npm run test",
     "test-client": "cd client && npm run test",
-    "check-all": "run-p check-*",
+    "check": "run-p check-*",
     "check-lint-client": "cd client && npm run check-all",
     "check-lint-server": "cd server && npm run lint",
     "check-test-client": "cd client && npm run test",
