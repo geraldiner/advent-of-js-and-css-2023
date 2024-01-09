@@ -10,6 +10,7 @@ function LoginPage() {
       <main>
         <h1>Login</h1>
         <Link to="signup">Already have an account?</Link>
+        <Icon />
       </main>
       <Footer />
     </>

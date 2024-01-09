@@ -1,7 +1,7 @@
 import React from 'react';
 
 function Icon() {
-  return <svg>This icon</svg>;
+  return <p>This icon</p>;
 }
 
 export default Icon;
