@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import Footer from '../components/Footer';
+import Icon from '../components/Icon';
 
 function LoginPage() {
   return (
