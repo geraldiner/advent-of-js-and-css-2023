@@ -1,7 +1,7 @@
 import React from 'react';
 
-function Footer() {
-  return <footer>This is the footer</footer>;
+function Icon() {
+  return <svg>This icon</svg>;
 }
 
-export default Footer;
+export default Icon;
