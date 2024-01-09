@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const request = require("supertest");
 
-const app = require("../src/index");
+const app = require("../src/app");
 
 require("dotenv").configDotenv();
 
@@ -15,7 +15,6 @@ beforeEach(async () => {
 /* Closing database connection after each test. */
 afterEach(async () => {
   mongoose.connection.close();
-  app.close()
 });
 
 describe("GET /", () => {
