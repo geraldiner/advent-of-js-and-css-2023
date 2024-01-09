@@ -15,7 +15,7 @@ function HomePage() {
           <div className="signup-form">
             <form>
               <label htmlFor="firstName">
-                <span>Name: </span>
+                <span>User: </span>
                 <input
                   name="firstName"
                   type="text"
