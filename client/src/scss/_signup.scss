@@ -3,14 +3,16 @@
   width: 100%;
 
   & .hero-background {
-    background-image: url('../images/backgrounds/background-full-width.svg');
-    background-position: center;
-    background-size: cover;
     height: 100vh;
     min-height: 300px;
     position: fixed;
     width: 100%;
     z-index: -1;
+
+    & img {
+      height: auto;
+      width: 100%;
+    }
   }
 
   & .signup-form {

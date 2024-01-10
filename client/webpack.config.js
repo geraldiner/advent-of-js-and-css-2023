@@ -2,6 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require("copy-webpack-plugin")
 
 let mode = 'development';
 let target = 'web';
@@ -17,7 +18,6 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'dist'),
     publicPath: '/',
-    assetModuleFilename: 'images/[hash][ext][query]',
   },
   module: {
     rules: [
@@ -40,14 +40,6 @@ module.exports = {
           'sass-loader',
         ],
       },
-      {
-        test: /\.(png|jpe?g|gif)$/i,
-        type: 'asset',
-      },
-      {
-        test: /\.svg$/,
-        type: 'asset/inline',
-      },
     ],
   },
   plugins: [
@@ -56,6 +48,11 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './src/_index.html',
     }),
+    new CopyWebpackPlugin({
+      patterns: [
+          { from: 'static' }
+      ]
+    })
   ],
   resolve: {
     extensions: ['.js', '.jsx'],

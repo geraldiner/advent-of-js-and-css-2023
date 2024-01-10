@@ -11,7 +11,12 @@ function HomePage() {
     <>
       <main>
         <section id="signup">
-          <div className="hero-background" />
+          <div className="hero-background">
+            <img
+              alt="background"
+              src="/images/backgrounds/background-full-width.svg"
+            />
+          </div>
           <div className="signup-form">
             <form>
               <label htmlFor="firstName">
