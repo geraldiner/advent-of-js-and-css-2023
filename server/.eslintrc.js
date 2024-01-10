@@ -1,12 +1,38 @@
 module.exports = {
   env: {
-    node: true,
-    commonjs: true,
+    browser: true,
+    es2021: true,
   },
-  extends: "eslint:recommended",
+  extends: [
+    'airbnb',
+    'plugin:import/recommended',
+    'plugin:prettier/recommended',
+  ],
   overrides: [],
   parserOptions: {
-    ecmaVersion: "latest",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
-  rules: {},
+  plugins: ['prettier'],
+  ignorePatterns: ['*.config.js'],
+  rules: {
+    'no-console': 'off',
+    'no-underscore-dangle': 'off',
+    eqeqeq: ['error', 'always'],
+    'import/order': [
+      'error',
+      {
+        alphabetize: {
+          order: 'asc',
+        },
+        'newlines-between': 'always',
+      },
+    ],
+    'sort-imports': [
+      'error',
+      {
+        ignoreDeclarationSort: true,
+      },
+    ],
+  },
 };

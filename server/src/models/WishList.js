@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -23,9 +23,9 @@ const WishListSchema = new Schema(
     siteTitle: String,
     siteDescription: String,
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const WishList = mongoose.model("WishList", WishListSchema);
+const WishList = mongoose.model('WishList', WishListSchema);
 
 module.exports = WishList;

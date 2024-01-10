@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
     "start": "run-p start-*",
     "start-server": "cd server && npm run dev",
@@ -15,6 +16,9 @@
     "check-lint-server": "cd server && npm run lint",
     "check-test-client": "cd client && npm run test",
     "check-test-server": "cd server && npm run test",
+    "fix": "run-p fix-*",
+    "fix-lint-client": "cd client && npm run fix-all",
+    "fix-lint-server": "cd server && npm run fix-all",
     "prepare": "husky install"
   },
   "repository": {

@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
@@ -20,13 +20,13 @@ const InviteSchema = new Schema(
     email: requiredString,
     status: {
       type: String,
-      enum: ["INVITED", "DECLINED", "ACCEPTED"],
-      default: "INVITED",
+      enum: ['INVITED', 'DECLINED', 'ACCEPTED'],
+      default: 'INVITED',
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 
-const Invite = mongoose.model("Invite", InviteSchema);
+const Invite = mongoose.model('Invite', InviteSchema);
 
 module.exports = Invite;
