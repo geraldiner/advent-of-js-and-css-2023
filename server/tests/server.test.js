@@ -7,7 +7,7 @@ require("dotenv").configDotenv();
 
 /* Connecting to the database before each test. */
 beforeEach(async () => {
-  mongoose.connect(process.env.DATABASE_URL, {
+  mongoose.connect(process.env.DB_URL_STAGING, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   });});

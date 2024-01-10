@@ -1,31 +1,30 @@
-const express = require("express");
-const morgan = require("morgan");
-const helmet = require("helmet");
-const cors = require("cors");
-const mongoose = require("mongoose");
+const cors = require('cors');
+const express = require('express');
+const helmet = require('helmet');
+const morgan = require('morgan');
 
-require("dotenv").configDotenv({ path: "../.env" });
+require('dotenv').configDotenv({ path: '../.env' });
 
-const middlewares = require("./middlewares");
+const connectDB = require('./config/db');
+const middlewares = require('./middlewares');
 
 const app = express();
-mongoose.connect(process.env.DATABASE_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-});
 
-app.use(morgan("common"));
+connectDB();
+
+app.use(morgan('common'));
 app.use(helmet());
 app.use(
   cors({
-    origin: process.env.CORS_ORIGIN,
-  })
+    origin:
+      /(https:\/\/secret-santa-staging(-[\w]+-[\w]+-[\w]+-[\w]+)?.vercel.app)|(http:\/\/localhost:8080)|(http:\/\/localhost:4040)/g,
+  }),
 );
 
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
   res.status = 200;
   res.json({
-    message: "Hello World!",
+    message: 'Hello World!',
   });
 });
 
