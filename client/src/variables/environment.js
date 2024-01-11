@@ -1,6 +1,6 @@
 /* eslint-disable import/no-mutable-exports */
 const _HOST_NAME = window.location.hostname;
-const IS_PROD = _HOST_NAME.includes('secret-santa.vercel.app');
+const IS_PROD = _HOST_NAME.includes('secret-santa-app-2023.vercel.app');
 const IS_STAGING = _HOST_NAME.includes('secret-santa-staging');
 let SITE_BASE_URL = 'http://localhost:8080';
 let API_BASE_URL = 'http://localhost:4040';

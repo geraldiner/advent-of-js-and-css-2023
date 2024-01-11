@@ -16,8 +16,10 @@ app.use(morgan('common'));
 app.use(helmet());
 app.use(
   cors({
-    origin:
-      /(https:\/\/secret-santa-staging(-[\w]+-[\w]+-[\w]+-[\w]+)?.vercel.app)|(http:\/\/localhost:8080)|(http:\/\/localhost:4040)/g,
+    origin: '*',
+    methods: '*',
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true,
   }),
 );
 

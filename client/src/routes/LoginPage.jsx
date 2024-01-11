@@ -7,7 +7,12 @@ import { API_BASE_URL } from '../variables/environment';
 
 function LoginPage() {
   useEffect(() => {
-    axios.get(`${API_BASE_URL}/`).then(({ data }) => console.log(data));
+    axios
+      .get(`${API_BASE_URL}/`)
+      .then(({ data }) => console.log(data))
+      .catch((error) => {
+        console.error(error);
+      });
   });
   return (
     <>
