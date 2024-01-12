@@ -15,7 +15,7 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
-  plugins: ['react', 'prettier'],
+  plugins: ['import', 'react', 'prettier'],
   parser: '@babel/eslint-parser',
   parserOptions: {
     ecmaFeatures: {

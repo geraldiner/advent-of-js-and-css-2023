@@ -1,16 +1,15 @@
 const mongoose = require('mongoose');
 
+const { getDbUrl } = require('../utils/utils');
+
 const connectDB = async () => {
-  let DB_URL = process.env.DB_URL_STAGING;
-  if (process.env === 'production') {
-    DB_URL = process.env.DB_URL_PROD;
-  }
+  const DB_URL = getDbUrl();
   try {
     await mongoose.connect(DB_URL, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log(`MongoDB connected.`);
+    console.log(`Database connected.`);
   } catch (error) {
     console.error(error);
     process.exit(1);

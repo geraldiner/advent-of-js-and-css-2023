@@ -12,6 +12,14 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module',
   },
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    requireConfigFile: false,
+    babelOptions: {
+      presets: ['@babel/preset-env'],
+    },
+  },
   plugins: ['prettier'],
   ignorePatterns: ['*.config.js'],
   rules: {
