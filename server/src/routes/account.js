@@ -1,11 +1,7 @@
 const express = require('express');
 
-const {
-  getAccount,
-  getDashboard,
-  updateAccount,
-} = require('../controllers/account.controller');
-const { ensureAuth } = require('../middleware/auth.middleware');
+const {getAccount, getDashboard, updateAccount} = require('../controllers/account.controller');
+const {ensureAuth} = require('../middleware/auth.middleware');
 
 const router = express.Router();
 
@@ -28,9 +24,6 @@ router.get('/dashboard', ensureAuth, getDashboard);
  * @access Private
  */
 
-router
-  .route('/account')
-  .get(ensureAuth, getAccount)
-  .put(ensureAuth, updateAccount);
+router.route('/account').get(ensureAuth, getAccount).put(ensureAuth, updateAccount);
 
 module.exports = router;

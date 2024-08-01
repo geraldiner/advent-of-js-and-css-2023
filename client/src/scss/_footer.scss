@@ -1,14 +1,12 @@
-@use 'variables';
-
-footer {
-  align-items: center;
-  background-color: variables.$acadia;
-  bottom: 0;
-  color: variables.$scotch-mist;
-  display: flex;
-  flex-direction: column;
-  height: 200px;
-  padding: 20px;
-  position: fixed;
-  width: 100%;
+.footer {
+	align-items: center;
+	background-color: $acadia;
+	bottom: 0;
+	color: $scotch-mist;
+	display: flex;
+	flex-direction: column;
+	left: 0;
+	padding: 20px;
+	width: 100%;
+	z-index: 10;
 }

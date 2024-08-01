@@ -1,9 +1,8 @@
+/* eslint-disable no-undef */
 const mongoose = require("mongoose");
 const request = require("supertest");
 
 const app = require("../src/app");
-
-require("dotenv").configDotenv();
 
 /* Connecting to the database before each test. */
 beforeEach(async () => {

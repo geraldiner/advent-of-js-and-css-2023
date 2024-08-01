@@ -1,11 +1,7 @@
 const express = require('express');
 
-const {
-  postSignup,
-  postLogin,
-  postLogout,
-} = require('../controllers/auth.controller');
-const { ensureAuth } = require('../middleware/auth.middleware');
+const {postSignup, postLogin, postLogout} = require('../controllers/auth.controller');
+const {ensureAuth} = require('../middleware/auth.middleware');
 
 const router = express.Router();
 

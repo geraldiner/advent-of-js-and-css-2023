@@ -1,3 +1,7 @@
-@use 'global';
-@use 'signup';
-@use 'footer';
+@import 'vendor/reset';
+@import 'modules/fonts';
+@import 'modules/mixins';
+@import 'modules/variables';
+@import 'global';
+@import 'signup';
+@import 'footer';

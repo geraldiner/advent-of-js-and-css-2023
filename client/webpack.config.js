@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require("copy-webpack-plugin")
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 let mode = 'development';
 let target = 'web';
@@ -13,22 +13,20 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 module.exports = {
-  mode,
-  target,
-  output: {
-    path: path.resolve(__dirname, 'dist'),
-    publicPath: '/',
-  },
-  module: {
-    rules: [
-      {
-        test: /\.jsx?$/,
+	mode,
+	target,
+	output: {
+		path: path.resolve(__dirname, './dist'),
+		publicPath: '/'
+	},
+	module: {
+		rules: [
+			{
+				test: /\.(js|jsx)$/,
         exclude: /node_modules/,
-        use: {
-          loader: 'babel-loader',
-        },
-      },
-      {
+				use: 'babel-loader',
+			},
+			{
         test: /\.s?css$/i,
         use: [
           {
@@ -40,27 +38,27 @@ module.exports = {
           'sass-loader',
         ],
       },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
+		],
+	},
+	plugins: [
+		new CleanWebpackPlugin(),
     new MiniCssExtractPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/_index.html',
+		new HtmlWebpackPlugin({
+			template: path.join(__dirname, 'public', 'index.html'),
+		}),
+		new CopyWebpackPlugin({
+      patterns: [{ from: 'static' }],
     }),
-    new CopyWebpackPlugin({
-      patterns: [
-          { from: 'static' }
-      ]
-    })
-  ],
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
-  devtool: 'source-map',
-  devServer: {
+	],
+	resolve: {
+		extensions: ['.js', '.jsx'],
+	},
+	devtool: 'source-map',
+	devServer: {
     static: './dist',
-    hot: true,
-    historyApiFallback: true,
-  },
+		open: true,
+		hot: true,
+		liveReload: true,
+		historyApiFallback: true
+	},
 };

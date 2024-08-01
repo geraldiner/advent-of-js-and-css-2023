@@ -1,0 +1,16 @@
+module.exports = {
+	bracketSpacing: false,
+	bracketSameLine: true,
+	endOfLine: 'auto',
+	importOrder: ['<THIRD_PARTY_MODULES>', '^[./]'],
+	importOrderSeparation: true,
+	importOrderSortSpecifiers: true,
+	printWidth: 100,
+	quoteProps: 'consistent',
+	semi: true,
+	singleQuote: true,
+	trailingComma: 'es5',
+	tabWidth: 2,
+	useTabs: true,
+	plugins: [require.resolve('@trivago/prettier-plugin-sort-imports')],
+};
