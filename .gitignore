@@ -5,3 +5,4 @@ challenge_resources
 **/build
 
 .vscode
+.codesandbox

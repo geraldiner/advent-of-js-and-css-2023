@@ -3,7 +3,7 @@ import React, {useEffect, useState} from 'react';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 
-import Footer from '../../components/Footer';
+import Layout from '../../layouts/Layout';
 import {login} from '../../slices/auth.slice';
 import {setCookie} from '../../utils/cookies';
 import {API_BASE_URL} from '../../variables/environment';
@@ -65,60 +65,52 @@ function SignupPage() {
 	const disableSubmit = !fullName || !email || !password || !confirmPassword;
 
 	return (
-		<>
-			<main>
-				<section id="signup">
-					<div className="hero-background" />
-					<div className="signup-form">
-						<h1>Sign Up</h1>
-						<form>
-							<label htmlFor="fullName">
-								Full Name
-								<input
-									id="fullName"
-									type="text"
-									value={fullName}
-									onChange={(e) => handleInputChange(e)}
-								/>
-							</label>
-							<label htmlFor="email">
-								Email:
-								<input
-									id="email"
-									type="email"
-									value={email}
-									onChange={(e) => handleInputChange(e)}
-								/>
-							</label>
-							<label htmlFor="password">
-								Password:
-								<input
-									id="password"
-									type="password"
-									value={password}
-									onChange={(e) => handleInputChange(e)}
-								/>
-							</label>
-							<label htmlFor="confirmPassword">
-								Confirm Password:
-								<input
-									id="confirmPassword"
-									type="password"
-									value={confirmPassword}
-									onChange={(e) => handleInputChange(e)}
-								/>
-							</label>
-							<button type="submit" disabled={disableSubmit} onClick={(e) => handleSubmit(e)}>
-								Sign Up
-							</button>
-						</form>
-						<Link to="/login">Already have an account?</Link>
-						<Link to="/">Back to home</Link>
-					</div>
-				</section>
-			</main>
-			<Footer />
-		</>
+		<Layout title="Sign Up">
+			<section id="signup">
+				<div className="hero-background" />
+				<div className="signup-form">
+					<h1>Sign Up</h1>
+					<form>
+						<label htmlFor="fullName">
+							Full Name
+							<input
+								id="fullName"
+								type="text"
+								value={fullName}
+								onChange={(e) => handleInputChange(e)}
+							/>
+						</label>
+						<label htmlFor="email">
+							Email:
+							<input id="email" type="email" value={email} onChange={(e) => handleInputChange(e)} />
+						</label>
+						<label htmlFor="password">
+							Password:
+							<input
+								id="password"
+								type="password"
+								value={password}
+								onChange={(e) => handleInputChange(e)}
+							/>
+						</label>
+						<label htmlFor="confirmPassword">
+							Confirm Password:
+							<input
+								id="confirmPassword"
+								type="password"
+								value={confirmPassword}
+								onChange={(e) => handleInputChange(e)}
+							/>
+						</label>
+						<button type="submit" disabled={disableSubmit} onClick={(e) => handleSubmit(e)}>
+							Sign Up
+						</button>
+					</form>
+					<Link to="/login">Already have an account?</Link>
+					<Link to="/">Back to home</Link>
+				</div>
+			</section>
+		</Layout>
 	);
 }
 

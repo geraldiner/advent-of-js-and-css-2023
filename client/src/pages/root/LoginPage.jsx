@@ -1,9 +1,12 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
+import {Helmet} from 'react-helmet';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 
 import Hero from '../../components/Hero';
+import Email from '../../components/inputs/Email';
+import Password from '../../components/inputs/Password';
 import Layout from '../../layouts/Layout';
 import {login} from '../../slices/auth.slice';
 import {setCookie} from '../../utils/cookies';
@@ -57,28 +60,12 @@ function LoginPage() {
 	const disableSubmit = !email || !password;
 
 	return (
-		<Layout>
+		<Layout title="Log In">
 			<Hero>
 				<h1>Login</h1>
 				<form onSubmit={(e) => handleSubmit(e)}>
-					<label htmlFor="email">
-						Email:
-						<input
-							id="email"
-							type="email"
-							value={email}
-							onChange={(e) => setEmail(e.target.value)}
-						/>
-					</label>
-					<label htmlFor="password">
-						Password:
-						<input
-							id="password"
-							type="password"
-							value={password}
-							onChange={(e) => setPassword(e.target.value)}
-						/>
-					</label>
+					<Email id="email" value={email} setEmail={setEmail} />
+					<Password id="password" value={password} setPassword={setPassword} />
 					<button type="submit" disabled={disableSubmit} onClick={(e) => handleSubmit(e)}>
 						Login
 					</button>

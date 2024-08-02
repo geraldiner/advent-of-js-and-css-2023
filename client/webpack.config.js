@@ -8,8 +8,8 @@ let mode = 'development';
 let target = 'web';
 
 if (process.env.NODE_ENV === 'production') {
-  mode = 'production';
-  target = 'browserslist';
+	mode = 'production';
+	target = 'browserslist';
 }
 
 module.exports = {
@@ -23,39 +23,40 @@ module.exports = {
 		rules: [
 			{
 				test: /\.(js|jsx)$/,
-        exclude: /node_modules/,
+				exclude: /node_modules/,
 				use: 'babel-loader',
 			},
 			{
-        test: /\.s?css$/i,
-        use: [
-          {
-            loader: MiniCssExtractPlugin.loader,
-            options: { publicPath: '' },
-          },
-          'css-loader',
-          'postcss-loader',
-          'sass-loader',
-        ],
-      },
+				test: /\.s?css$/i,
+				use: [
+					{
+						loader: MiniCssExtractPlugin.loader,
+						options: { publicPath: '' },
+					},
+					'css-loader',
+					'postcss-loader',
+					'sass-loader',
+				],
+			},
 		],
 	},
 	plugins: [
 		new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin(),
+		new MiniCssExtractPlugin(),
 		new HtmlWebpackPlugin({
 			template: path.join(__dirname, 'public', 'index.html'),
 		}),
 		new CopyWebpackPlugin({
-      patterns: [{ from: 'static' }],
-    }),
+			patterns: [{ from: 'static' }],
+		}),
 	],
 	resolve: {
 		extensions: ['.js', '.jsx'],
 	},
 	devtool: 'source-map',
 	devServer: {
-    static: './dist',
+		allowedHosts: ['.csb.app'],
+		static: './dist',
 		open: true,
 		hot: true,
 		liveReload: true,

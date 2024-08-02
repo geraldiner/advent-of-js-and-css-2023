@@ -49,6 +49,7 @@ export default [
 					ignoreDeclarationSort: true,
 				},
 			],
+			'react/prop-types': ['warn'],
 		},
 	},
 ];

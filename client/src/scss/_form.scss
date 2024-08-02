@@ -1,0 +1,29 @@
+form {
+	.formInput {
+		display: block;
+
+		input {
+			border: none;
+			font-family: Kalam, sans-serif;
+			font-size: 32px;
+			margin: 10px auto;
+			outline: none;
+			padding: 20px;
+			text-transform: uppercase;
+			vertical-align: middle;
+			width: 600px;
+
+			&::placeholder {
+				color: $black;
+			}
+		}
+
+		button.visibility-icon-button {
+			background: transparent;
+			border: none;
+			color: $black;
+			outline: none;
+			position: relative;
+		}
+	}
+}
