@@ -2,6 +2,7 @@ form {
 	.formInput {
 		display: block;
 		position: relative;
+		width: 100%;
 
 		input {
 			border: none;
@@ -11,10 +12,10 @@ form {
 			outline: none;
 			padding: 20px;
 			vertical-align: middle;
-			width: 600px;
+			width: 100%;
 
 			&:focus,
-			&.mini {
+			&.minimize {
 				font-size: 24px;
 				padding-top: 30px;
 			}
@@ -41,7 +42,7 @@ form {
 				left 200ms ease-in,
 				font-size 200ms ease-in;
 
-			&.mini {
+			&.minimize {
 				color: $spanish-green;
 				font-size: 14px;
 				top: 0;

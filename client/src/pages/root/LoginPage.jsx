@@ -1,12 +1,11 @@
 import axios from 'axios';
 import React, {useEffect, useState} from 'react';
-import {Helmet} from 'react-helmet';
 import {useDispatch, useSelector} from 'react-redux';
 import {Link, useNavigate} from 'react-router-dom';
 
 import Hero from '../../components/Hero';
-import Email from '../../components/inputs/Email';
-import Password from '../../components/inputs/Password';
+import EmailInput from '../../components/inputs/EmailInput';
+import PasswordInput from '../../components/inputs/PasswordInput';
 import Layout from '../../layouts/Layout';
 import {login} from '../../slices/auth.slice';
 import {setCookie} from '../../utils/cookies';
@@ -64,8 +63,8 @@ function LoginPage() {
 			<Hero>
 				<h1>Login</h1>
 				<form onSubmit={(e) => handleSubmit(e)}>
-					<Email id="email" value={email} setEmail={setEmail} />
-					<Password id="password" value={password} setPassword={setPassword} />
+					<EmailInput id="email" value={email} setEmail={setEmail} />
+					<PasswordInput id="password" value={password} setPassword={setPassword} />
 					<button
 						className="button"
 						type="submit"

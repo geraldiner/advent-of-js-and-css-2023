@@ -1,21 +1,21 @@
 import React from 'react';
 
-function Email({id, value, setEmail}) {
+function EmailInput({id, value, setEmail}) {
 	return (
 		<div className="formInput">
 			<span className="sr-only">Email</span>
 			<input
-				className={value.length ? 'mini' : ''}
+				className={value.length ? 'minimize' : ''}
 				id={id}
 				type="email"
 				value={value}
 				onChange={(e) => setEmail(e.target.value)}
 			/>
-			<label className={value.length ? 'mini' : ''} htmlFor="email">
+			<label className={value.length ? 'minimize' : ''} htmlFor="email">
 				Email
 			</label>
 		</div>
 	);
 }
 
-export default Email;
+export default EmailInput;
