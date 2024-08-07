@@ -1,29 +1,51 @@
 form {
 	.formInput {
 		display: block;
+		position: relative;
 
 		input {
 			border: none;
-			font-family: Kalam, sans-serif;
+			font-family: Inter, sans-serif;
 			font-size: 32px;
 			margin: 10px auto;
 			outline: none;
 			padding: 20px;
-			text-transform: uppercase;
 			vertical-align: middle;
 			width: 600px;
 
-			&::placeholder {
-				color: $black;
+			&:focus,
+			&.mini {
+				font-size: 24px;
+				padding-top: 30px;
+			}
+
+			&:focus ~ label {
+				color: $spanish-green;
+				font-size: 14px;
+				top: 0;
 			}
 		}
 
-		button.visibility-icon-button {
-			background: transparent;
-			border: none;
+		label {
 			color: $black;
-			outline: none;
-			position: relative;
+			cursor: text;
+			font-family: Kalam, sans-serif;
+			font-size: 32px;
+			left: 0;
+			padding: 20px;
+			position: absolute;
+			text-transform: uppercase;
+			top: 18px;
+			transition:
+				top 200ms ease-in,
+				left 200ms ease-in,
+				font-size 200ms ease-in;
+
+			&.mini {
+				color: $spanish-green;
+				font-size: 14px;
+				top: 0;
+			}
 		}
 	}
 }

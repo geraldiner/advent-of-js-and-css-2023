@@ -66,11 +66,17 @@ function LoginPage() {
 				<form onSubmit={(e) => handleSubmit(e)}>
 					<Email id="email" value={email} setEmail={setEmail} />
 					<Password id="password" value={password} setPassword={setPassword} />
-					<button type="submit" disabled={disableSubmit} onClick={(e) => handleSubmit(e)}>
+					<button
+						className="button"
+						type="submit"
+						disabled={disableSubmit}
+						onClick={(e) => handleSubmit(e)}>
 						Login
 					</button>
 				</form>
-				<Link to="/signup">Don&apos;t have an account?</Link>
+				<p className="redirect-links">
+					<Link to="/signup">Need an account?</Link>
+				</p>
 			</Hero>
 		</Layout>
 	);

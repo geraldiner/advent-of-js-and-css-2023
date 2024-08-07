@@ -18,6 +18,10 @@ main {
 	width: auto;
 }
 
+p {
+	margin-bottom: 20px;
+}
+
 .hero {
 	align-items: center;
 	background: url('/static/images/backgrounds/background-full-width.svg');
@@ -83,12 +87,58 @@ main {
 	&.visibility-icon {
 		align-items: center;
 		display: flex;
-		height: 92px;
+		height: 82px;
 		justify-content: center;
 		left: -90px;
 		position: absolute;
-		top: -50px;
+		top: -44px;
 		vertical-align: middle;
 		width: 90px;
+
+		&:focus-visible {
+			border: 2px solid $evergreen;
+		}
+	}
+}
+
+// BUTTONS
+.button {
+	background-color: $supernova;
+	border: none;
+	border-radius: 50px;
+	color: $black;
+	font-family: Kalam, sans-serif;
+	font-size: 32px;
+	margin: 10px auto;
+	outline: none;
+	padding: 10px;
+	text-transform: uppercase;
+	vertical-align: middle;
+	width: 600px;
+
+	&:disabled {
+		background-color: $bombay;
+		color: $acadia;
+	}
+}
+
+.icon-button {
+	background: transparent;
+	border: none;
+	color: $black;
+	outline: none;
+	position: relative;
+
+	&:focus-visible .icon {
+		outline: -webkit-focus-ring-color auto 1px;
+	}
+}
+
+.redirect-links {
+	margin: 10px auto;
+	text-align: center;
+
+	a {
+		color: inherit;
 	}
 }

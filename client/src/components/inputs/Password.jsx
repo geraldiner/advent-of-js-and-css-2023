@@ -1,7 +1,5 @@
-import PropTypes from 'prop-types';
 import React, {useState} from 'react';
 
-import {formatTitleCase} from '../../utils/formatting';
 import Icon from '../Icon';
 
 function Password({id, value, setPassword}) {
@@ -13,24 +11,26 @@ function Password({id, value, setPassword}) {
 	};
 
 	return (
-		<label className="formInput password-input" htmlFor="password">
+		<div className="formInput password-input">
 			<span className="sr-only">Password:</span>
 			<input
 				id={id}
-				className="password-input"
+				className={value.length ? 'mini' : ''}
 				type={showPassword ? 'text' : 'password'}
 				value={value}
 				onChange={(e) => setPassword(e.target.value)}
-				placeholder={formatTitleCase(id)}
 			/>
-			<button type="button" className="visibility-icon-button" onClick={togglePasswordVisibility}>
+			<button type="button" className="icon-button" onClick={togglePasswordVisibility}>
 				<Icon
 					extraClassNames="visibility-icon clickable"
 					id={showPassword ? 'eyeClosed' : 'eyeOpened'}
 					size={32}
 				/>
 			</button>
-		</label>
+			<label className={value.length ? 'mini' : ''} htmlFor="password">
+				Password
+			</label>
+		</div>
 	);
 }
 
